@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+              http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+    <context:component-scan base-package="hibernate"></context:component-scan>
+
+
+    <!--<context:component-scan base-package="entity"></context:component-scan>-->
+    <!--<context:component-scan base-package="com.Myproject.daoImpl"></context:component-scan>-->
+    <!--<context:component-scan base-package="com.Myproject.dao"></context:component-scan>-->
+
+    <context:component-scan base-package="ServiceImpl"></context:component-scan>
+
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" >
+
+        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+        <!-- 连接数据库的url地址 -->
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/myblog?characterEncoding=utf8"></property>
+        <!-- 连接数据的用户名和密码 -->
+        <property name="user" value="root"></property>
+        <property name="password" value="123456"></property>
+
+    </bean>
+
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+
+        <property name="dataSource" ref="dataSource"/>
+
+    </bean>
+
+
+
+    <bean id="hibernateJpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <!--<property name="persistenceXmlLocation" value="META-INF/persistence.xml"/>-->
+        <property name="persistenceUnitName" value="JPAExamples"/>
+        <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
+        <property name="jpaDialect" ref="jpaDialect"/>
+        <property name="packagesToScan" value="hibernate"/>
+
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+                <!--是否显示 SQL-->
+                <prop key="hibernate.show_sql">true</prop>
+                <!--如果显示 SQL，输出的 SQL 时候要格式化-->
+                <prop key="hibernate.format_sql">true</prop>
+                <!--在显示的 SQL 中增加一些 Hibernate 提供的注释说明，依此来解释它生成的 SQL 意思-->
+                <!--配置如何根据java模型生成数据库表结构,常用update,validate-->
+                <prop key="hibernate.use_sql_comments">true</prop>
+                <!--<prop key="hibernate.hbm2ddl.auto">none</prop>-->
+                <!--关于这个属性可以看：http://blog.csdn.net/dracotianlong/article/details/27834143-->
+                <!--ImprovedNamingStrategy 是采用下划线，符合我们一般命名表字段的习惯-->
+                <!--所以，命名规则 My_NAME->MyName-->
+                <prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
+
+                <prop key="hibernate.generate_statistics">false</prop>
+
+            </props>
+        </property>
+    </bean>
+
+    <bean id="entityManager" factory-bean="entityManagerFactory"  factory-method="createEntityManager"></bean>
+
+    <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+        <property name="generateDdl" value="false" />
+        <property name="database" value="MYSQL"/>
+    </bean>
+    <bean id="jpaDialect" class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"/>
+
+    <!-- Jpa 事务管理器  -->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <!-- 开启注解事务 -->
+    <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+
+
+    <!-- 重要配置：启用扫描并自动创建代理的功能  -->
+    <jpa:repositories base-package="dao"
+                      entity-manager-factory-ref="entityManagerFactory"
+                      transaction-manager-ref="transactionManager"/>
+
+</beans>
