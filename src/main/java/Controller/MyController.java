@@ -134,7 +134,9 @@ public class MyController {
 
         String downloadFileName = new String(filename.getBytes("UTF-8"),"iso-8859-1");//设置编码
 
-        headers.setContentDispositionFormData("attachment", downloadFileName);
+        headers.setContentDispositionFormData("attachment", downloadFileName); //呵呵
+
+        System.out.println(123);
 
         headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
 
