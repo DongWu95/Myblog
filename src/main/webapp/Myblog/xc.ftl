@@ -28,9 +28,9 @@
             <li><a href="${ctx}/Myblog/tech?pagenum=1">技术专区</a></li>
             <li><a href="${ctx}/showResourse">资源专区</a></li>
             <li><a href="${ctx}/Myblog/Shortwords">只言片语</a></li>
-         <!--<li><a href="/View/riji.html">个人日记</a></li>-->
-         <li><a href="${ctx}/View/xc.html">相册展示</a></li>
-         <!--<li><a href="/View/learn.html">学无止境</a></li>-->
+         <!--<li><a href="/View/riji.ftl">个人日记</a></li>-->
+         <li><a href="${ctx}/View/xc.ftl">相册展示</a></li>
+         <!--<li><a href="/View/learn.ftl">学无止境</a></li>-->
 
          <div class="clear"></div>
         </ul>
@@ -47,27 +47,27 @@
               <div class="w960 mt_10">
                <div class="w650">
                 <ul class="tips" id="wf-main" style="display:none" >
-                        <li class="wf-cld"><img src="${ctx}/images/photo/2.png"  width="200" height="178" alt="" /></li>
-                        <li class="wf-cld"><img src="${ctx}/images/photo/11.png" height="247" width="200" alt="" /></li>
-                        <li class="wf-cld"><img src="${ctx}/images/photo/3.png"  width="200" height="267" alt="" /></li>
-                        <li class="wf-cld"><img src="${ctx}/images/photo/4.png"  width="200" height="125" alt="" /></li>
+                        <li class="wf-cld"><img src="/home/Myblog/images/photo/2.png"  width="200" height="178" alt="" /></li>
+                        <li class="wf-cld"><img src="/home/Myblog/images/photo/11.png" height="247" width="200" alt="" /></li>
+                        <li class="wf-cld"><img src="/home/Myblog/images/photo/3.png"  width="200" height="267" alt="" /></li>
+                        <li class="wf-cld"><img src="/home/Myblog/images/photo/4.png"  width="200" height="125" alt="" /></li>
 
 
-                        <li class="wf-cld"><img src="${ctx}/images/photo/66.jpg" width="247" height="267" alt="" /></li>
-                        <li class="wf-cld"><img src="${ctx}/images/photo/12.jpg" width="200" height="235" alt="" /></li>
-                        <li class="wf-cld"><img src="${ctx}/images/photo/15.jpg"  width="200" height="300" alt="" /></li>
-                        <li class="wf-cld"><img src="${ctx}/images/photo/16.jpg"  width="200" height="207" alt="" /></li>
-                        <li class="wf-cld"><img rel="lazy" lazy_src="${ctx}/images/photo/17.jpg"  width="200" height="178" alt="" /></li>
-                        <li class="wf-cld"><img rel="lazy" lazy_src="${ctx}/images/photo/18.jpg" height="147" width="200" alt="" /></li>
-                        <li class="wf-cld"><img rel="lazy" lazy_src="${ctx}/images/photo/19.jpg"  width="200" height="267" alt="" /></li>
-                        <li class="wf-cld"><img rel="lazy" lazy_src="${ctx}/images/photo/20.jpg"  width="200" height="225" alt="" /></li>
-                        <li class="wf-cld"><img rel="lazy" lazy_src="${ctx}/images/photo/21.jpg" width="200" height="299" alt="" /></li>
-                        <li class="wf-cld"><img rel="lazy" lazy_src="${ctx}/images/photo/22.jpg" width="200" height="225" alt="" /></li>
-                        <li class="wf-cld"><img rel="lazy" lazy_src="${ctx}/images/photo/23.jpg" width="200" height="267"alt="" /></li>
-                        <li class="wf-cld"><img rel="lazy" lazy_src="${ctx}/images/photo/24.jpg" width="200" height="235" alt="" /></li>
-                        <li class="wf-cld"><img rel="lazy" lazy_src="${ctx}/images/photo/25.jpg"  width="200" height="300" alt="" /></li>
-                        <li class="wf-cld"><img rel="lazy" lazy_src="${ctx}/images/photo/26.jpg"  width="200" height="207" alt="" /></li>
-                        <li class="wf-cld"><img rel="lazy" lazy_src="${ctx}/images/photo/27.JPG"  width="200" height="267" alt="" /></li>
+                        <li class="wf-cld"><img src="/home/Myblog/images/photo/66.jpg" width="247" height="267" alt="" /></li>
+                        <li class="wf-cld"><img src="/home/Myblog/images/photo/12.jpg" width="200" height="235" alt="" /></li>
+                        <li class="wf-cld"><img src="/home/Myblog/images/photo/15.jpg"  width="200" height="300" alt="" /></li>
+                        <li class="wf-cld"><img src="/home/Myblog/images/photo/16.jpg"  width="200" height="207" alt="" /></li>
+                        <li class="wf-cld"><img rel="lazy" lazy_src="/home/Myblog/images/photo/17.jpg"  width="200" height="178" alt="" /></li>
+                        <li class="wf-cld"><img rel="lazy" lazy_src="/home/Myblog/images/photo/18.jpg" height="147" width="200" alt="" /></li>
+                        <li class="wf-cld"><img rel="lazy" lazy_src="/home/Myblog/images/photo/19.jpg"  width="200" height="267" alt="" /></li>
+                        <li class="wf-cld"><img rel="lazy" lazy_src="/home/Myblog/images/photo/20.jpg"  width="200" height="225" alt="" /></li>
+                        <li class="wf-cld"><img rel="lazy" lazy_src="/home/Myblog/images/photo/21.jpg" width="200" height="299" alt="" /></li>
+                        <li class="wf-cld"><img rel="lazy" lazy_src="/home/Myblog/images/photo/22.jpg" width="200" height="225" alt="" /></li>
+                        <li class="wf-cld"><img rel="lazy" lazy_src="/home/Myblog/images/photo/23.jpg" width="200" height="267"alt="" /></li>
+                        <li class="wf-cld"><img rel="lazy" lazy_src="/home/Myblog/images/photo/24.jpg" width="200" height="235" alt="" /></li>
+                        <li class="wf-cld"><img rel="lazy" lazy_src="/home/Myblog/images/photo/25.jpg"  width="200" height="300" alt="" /></li>
+                        <li class="wf-cld"><img rel="lazy" lazy_src="/home/Myblog/images/photo/26.jpg"  width="200" height="207" alt="" /></li>
+                        <li class="wf-cld"><img rel="lazy" lazy_src="/home/Myblog/images/photo/27.JPG"  width="200" height="267" alt="" /></li>
 
                     </ul>
                </div>

@@ -29,8 +29,8 @@
             <li><a href="${ctx}/Myblog/tech?pagenum=1">技术专区</a></li>
             <li><a href="${ctx}/showResourse">资源专区</a></li>
             <li><a href="${ctx}/Myblog/Shortwords">只言片语</a></li>
-            <!--<li><a href="/View/riji.html">个人日记</a></li>-->
-            <li><a href="${ctx}/View/xc.html">相册展示</a></li>
+            <!--<li><a href="/View/riji.ftl">个人日记</a></li>-->
+            <li><a href="${ctx}/View/xc.ftl">相册展示</a></li>
          <div class="clear"></div>
         </ul>
       </div>
@@ -40,7 +40,7 @@
          <!--left-->
          <div class="left" id="c_left">
            <div class="s_tuijian">
-           <h2><span><a href="{ctx}/Memory">写点啥吧</a></span></h2>
+           <h2><span><a href="${ctx}/Memory">写点啥吧</a></span></h2>
            </div>
           <div class="content_text">
            <!--wz-->
@@ -49,7 +49,7 @@
         <#list articlelist as article>
 
            <div class="wz">
-            <h3><a href="#" title="浅谈：html5和html的区别">${article.title}</a></h3>
+            <h3><a href="/fullContent?id=${article.id}" title="浅谈：html5和html的区别">${article.title}</a></h3>
              <dl>
                <dt><img src="${ctx}/images/s.jpg" width="200"  height="123" alt=""></dt>
                <dd>

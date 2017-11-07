@@ -1,12 +1,14 @@
     <%@ page language="java" contentType="text/html; charset=utf-8"
              pageEncoding="utf-8"%>
-        <%@ page import="com.baidu.ueditor.um.Uploader" %>
+        <%@ page import="org.apache.commons.fileupload" %>
+    <%@ page import="com.baidu.ueditor.um.*" %>
+    <%@ page import="com.baidu.ueditor.um.Uploader" %>
 
-            <%
+    <%
     request.setCharacterEncoding("utf-8");
 	response.setCharacterEncoding("utf-8");
-    Uploader up = new Uploader(request);
-    up.setSavePath("upload");
+    com.baidu.ueditor.um.Uploader up = new Uploader(request);
+    up.setSavePath("/home/Myblog/res2");
     String[] fileType = {".gif" , ".png" , ".jpg" , ".jpeg" , ".bmp"};
     up.setAllowFiles(fileType);
     up.setMaxSize(10000); //单位KB

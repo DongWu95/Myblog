@@ -30,7 +30,7 @@
              <li><a href="/showResourse">资源专区</a></li>
              <li><a href="/Myblog/Shortwords">只言片语</a></li>
              <!--<li><a href="/View/riji.html">个人日记</a></li>-->
-             <li><a href="/View/xc.html">相册展示</a></li>
+             <li><a href="/View/xc.ftl">相册展示</a></li>
          <div class="clear"></div>
         </ul>
       </div>
