@@ -71,34 +71,6 @@
                ${article.content}
 
 
-               <div class="ylcon">
-                   <p class="tit">
-                       所有留言
-                   </p>
-                   <div id="messDivId">
-                       <div class="story">
-                           <div class="opbtn"></div>
-                           <p class="story_t">怜星</p>
-                           <p class="story_time">2015/07/12 20:48</p>
-                           <p class="story_m">我想问最近最火的tfboys呢他们的八卦呢我想问最近最火的tfboys呢,他们的八卦呢我想问最近最火的tfboys呢？！他们的八卦呢？！</p>
-                           <p class="story_hf">@剑花烟雨:的是相对无言眼波如流的默契的是相对无言眼波如流的默契的是相对无言眼波如流的默契的是相对无言眼波如流的默契的是相对无言眼波如流的默契的是相对无言眼波如流的默契</p>
-                       </div>
-                       <div class="story">
-                           <div class="opbtn"></div>
-                           <p class="story_t">怜星</p>
-                           <p class="story_time">2015/07/12 20:48</p>
-                           <p class="story_m">我想问最近最火的tfboys呢他们的八卦呢我想问最近最火的tfboys呢,他们的八卦呢我想问最近最火的tfboys呢？！他们的八卦呢？！</p>
-                           <p class="story_hf">@剑花烟雨:的是相对无言眼波如流的默契的是相对无言眼波如流的默契的是相对无言眼波如流的默契的是相对无言眼波如流的默契的是相对无言眼波如流的默契的是相对无言眼波如流的默契</p>
-                       </div>
-                       <div class="story">
-                           <div class="opbtn"></div>
-                           <p class="story_t">怜星</p>
-                           <p class="story_time">2015/07/12 20:48</p>
-                           <p class="story_m">我想问最近最火的tfboys呢他们的八卦呢我想问最近最火的tfboys呢,他们的八卦呢我想问最近最火的tfboys呢？！他们的八卦呢？！</p>
-                           <p class="story_hf">@剑花烟雨:的是相对无言眼波如流的默契的是相对无言眼波如流的默契的是相对无言眼波如流的默契的是相对无言眼波如流的默契的是相对无言眼波如流的默契的是相对无言眼波如流的默契</p>
-                       </div>
-                   </div>
-               </div>
            </div>
          </div>
          <!--end left -->
@@ -147,7 +119,7 @@
 
 
 
-     <!--<p>Design by:少东 2017-11-05</p>-->
+     <p>Design by:少东 2017-11-05</p>
     </div>
     <!--footer end-->
     <script type="text/javascript">jQuery(".lanmubox").slide({easing:"easeOutBounce",delayTime:400});</script>
