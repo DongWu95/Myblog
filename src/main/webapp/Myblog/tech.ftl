@@ -49,7 +49,7 @@
         <#list articlelist as article>
 
            <div class="wz">
-            <h3><a href="#" title="浅谈：html5和html的区别">${article.title}</a></h3>
+            <h3><a href="${ctx}/fullContent?id=${article.id}" title="浅谈：html5和html的区别">${article.title}</a></h3>
              <dl>
                <dt><img src="http://120.24.249.135/image/3.jpg" width="200"  height="123" alt=""></dt>
                <dd>
