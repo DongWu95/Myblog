@@ -6,7 +6,7 @@
     request.setCharacterEncoding("utf-8");
 	response.setCharacterEncoding("utf-8");
     Uploader up = new Uploader(request);
-    up.setSavePath("/home/Myblog/res1");
+    up.setSavePath("upload");
     String[] fileType = {".gif" , ".png" , ".jpg" , ".jpeg" , ".bmp"};
     up.setAllowFiles(fileType);
     up.setMaxSize(10000); //单位KB

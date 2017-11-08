@@ -49,7 +49,7 @@
                <#list resourselist as resourse>
               <div class="shiguang animated bounceIn">
                 <div class="left sg_ico">
-                <img src="${ctx}/images/photo/2.jpg" width="120" height="120" alt=""/>
+                <img src="http://120.24.249.135/image/2.jpg" width="120" height="120" alt=""/>
                 </div>
                 <div class="right sg_text">
                 <img src="${ctx}/images/left.png" width="13" height="16" alt="左图标"/>

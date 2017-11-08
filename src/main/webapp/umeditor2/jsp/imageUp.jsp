@@ -8,7 +8,7 @@
     request.setCharacterEncoding("utf-8");
 	response.setCharacterEncoding("utf-8");
     com.baidu.ueditor.um.Uploader up = new Uploader(request);
-    up.setSavePath("/home/Myblog/res2");
+    up.setSavePath("upload");
     String[] fileType = {".gif" , ".png" , ".jpg" , ".jpeg" , ".bmp"};
     up.setAllowFiles(fileType);
     up.setMaxSize(10000); //单位KB
