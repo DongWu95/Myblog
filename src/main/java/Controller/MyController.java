@@ -3,10 +3,7 @@ package Controller;
 
 import com.mchange.io.FileUtils;
 import dao.*;
-import hibernate.Article;
-import hibernate.Resourse;
-import hibernate.Shortwords;
-import hibernate.techArticle;
+import hibernate.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -27,8 +24,10 @@ import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by Administrator on 2017/10/23 0023.
@@ -53,6 +52,57 @@ public class MyController {
     private ResourseDao   resourseDao;
     @Autowired
     private ResourseImpl  resourseImpl;
+    @Autowired
+    private CommentDao    commentDao;
+
+
+
+
+
+    //评论的上传
+    @RequestMapping(value = "/Myblog/Comment")
+    public String comment(HttpServletRequest request,HttpSession session,@RequestParam(value = "message",defaultValue ="-010" ) String message,@RequestParam("articleid") Integer articleid){
+
+        System.out.println("message:---------------------------------"+message);
+
+        if(!message.equals("-010")) {
+            String datetime;
+            Article article = articleDao.findOne(articleid);
+            String name = (String) session.getAttribute("username");
+            Date d = new Date();
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            datetime = sdf.format(d);
+            Comment comment = new Comment(name, datetime, message, article);
+            commentDao.save(comment);
+        }
+        Article article = articleDao.findOne(articleid);
+        request.setAttribute("article",article);
+        List<Comment> commentlist = article.getE();
+        commentlist.sort(new Comparator<Comment>(){      //按某个属性再排序
+            @Override
+            public int compare(Comment o1, Comment o2) {
+                if(o1.getId()> o2.getId())
+                    return 1;
+                if(o1.getId() == o2.getId())
+                    return 0;
+                return -1;
+            }
+        });
+
+        request.setAttribute("commentlist",commentlist);
+        int comment_num = commentlist.size();
+        request.setAttribute("comment_num",comment_num);
+        request.setAttribute("articleid",articleid);
+
+        return "fullarticle";
+
+
+    }
+
+
+
+
+
 
 
 
@@ -495,6 +545,13 @@ public class MyController {
         if(article != null){
 
             request.setAttribute("article",article);
+            List<Comment> commentlist = article.getE();
+            request.setAttribute("commentlist",commentlist);
+            int comment_num = commentlist.size();
+            request.setAttribute("comment_num",comment_num);
+            request.setAttribute("articleid",id);
+
+
 
             return "fullarticle";
 

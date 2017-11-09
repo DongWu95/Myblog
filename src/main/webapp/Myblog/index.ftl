@@ -61,7 +61,7 @@
                <span class="left author">${article.author}</span><span class="left sj">${article.datetime}</span>
                <span class="left fl">关键词:<a href="#" title="学无止境">${article.keywords}</a></span><span class="left yd">
                    <#if article.isShort==0>
-                   <a href="/fullContent?id=${article.id}" title="阅读全文">阅读全文</a>
+                   <a href="${ctx}/fullContent?id=${article.id}" title="阅读全文">阅读全文</a>
                    </#if>
                </span>
                 <div class="clear"></div>

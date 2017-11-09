@@ -1,6 +1,12 @@
 package hibernate;
 
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -23,6 +29,15 @@ public class Article {
     private String shortText;
     private String content;
 
+
+
+    @OneToMany(mappedBy = "comid",cascade = {CascadeType.ALL},fetch=FetchType.EAGER)
+    private List<Comment> e =new ArrayList<>();
+
+
+
+
+
     public Article() {
 
     }
@@ -37,7 +52,9 @@ public class Article {
     }
 
 
-
+    public List<Comment> getE() {
+        return e;
+    }
 
     public int getId() {
         return id;
@@ -77,6 +94,10 @@ public class Article {
         return isShort;
     }
 
+
+    public void setE(List<Comment> e) {
+        this.e = e;
+    }
 
     public void setIsShort(Integer isShort) {
         this.isShort = isShort;
