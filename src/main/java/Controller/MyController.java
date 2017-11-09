@@ -369,6 +369,7 @@ public class MyController {
 
             article.setIsShort(1);
             article.setShortText(content);
+            article.setContent(content);
         }
         else{
 
