@@ -24,10 +24,7 @@ import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Administrator on 2017/10/23 0023.
@@ -492,6 +489,7 @@ public class MyController {
 
         Page<Article> pages = null;
         List<Article> articleList = null;
+
         int totalpage;
 
         System.out.println(size);
@@ -509,10 +507,12 @@ public class MyController {
 
 
 
-        request.setAttribute("name", "hello freemaker");
+
+//      request.setAttribute("name", "hello freemaker");
         request.setAttribute("pageNo", pagenum);
         request.setAttribute("totalPage", totalpage);
         request.setAttribute("articlelist",articleList);
+//        request.setAttribute("commentlist",commentsize);
 
 //        return pages;
 

@@ -61,9 +61,12 @@
                <span class="left author">${article.author}</span><span class="left sj">${article.datetime}</span>
                <span class="left fl">关键词:<a href="#" title="学无止境">${article.keywords}</a></span><span class="left yd">
 
-                   <a href="${ctx}/fullContent?id=${article.id}" title="阅读全文">阅读全文</a>
+
+                   <a > 评论数:${article.e?size}</a>
 
                </span>
+
+                   <a href="${ctx}/fullContent?id=${article.id}" title="阅读全文">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;阅读全文</a>
                 <div class="clear"></div>
                </p>
                </dd>
