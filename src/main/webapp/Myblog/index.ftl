@@ -8,15 +8,24 @@
 <meta name="description" content="" />
 <link rel="stylesheet" href="${ctx}/css/index.css"/>
 <link rel="stylesheet" href="${ctx}/css/style.css"/>
+<link rel="stylesheet" href="${ctx}/music/css/mplayer.css">
+<link rel="stylesheet" href="${ctx}/music/css/mplayer.css">
 <script type="text/javascript" src="${ctx}/js/jquery1.42.min.js"></script>
 <script type="text/javascript" src="${ctx}/js/jquery.SuperSlide.2.1.1.js"></script>
+
 <!--[if lt IE 9]>
 <script src="${ctx}/js/html5.js"></script>
 <![endif]-->
+
+
 </head>
 
 <body>
     <!--header start-->
+
+
+
+
     <div id="header">
       <h1>430的乌托邦</h1>
       <p>还是搞不懂，岁岁年年为了什么。</p>
@@ -150,6 +159,67 @@
 
 <!--<p>Design by:<a href="http://www.duanliang920.com" target="_blank">少年</a> 2014-8-9</p>-->
     </div>
+
+
+
+    <div class="mp">
+        <div class="mp-box">
+            <img src="${ctx}/music/img/mplayer_error.png" alt="music cover" class="mp-cover">
+            <div class="mp-info">
+                <p class="mp-name">燕归巢</p>
+                <p class="mp-singer">许嵩</p>
+                <p><span class="mp-time-current">00:00</span>/<span class="mp-time-all">00:00</span></p>
+            </div>
+            <div class="mp-btn">
+                <button class="mp-prev" title="上一首"></button>
+                <button class="mp-pause" title="播放"></button>
+                <button class="mp-next" title="下一首"></button>
+                <button class="mp-mode" title="播放模式"></button>
+                <div class="mp-vol">
+                    <button class="mp-vol-img" title="静音"></button>
+                    <div class="mp-vol-range" data-range_min="0" data-range_max="100" data-cur_min="80">
+                        <div class="mp-vol-current"></div>
+                        <div class="mp-vol-circle"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mp-pro">
+                <div class="mp-pro-current"></div>
+            </div>
+            <div class="mp-menu">
+                <button class="mp-list-toggle"></button>
+                <button class="mp-lrc-toggle"></button>
+            </div>
+        </div>
+        <button class="mp-toggle">
+            <span class="mp-toggle-img"></span>
+        </button>
+        <div class="mp-lrc-box">
+            <ul class="mp-lrc"></ul>
+        </div>
+        <button class="mp-lrc-close"></button>
+        <div class="mp-list-box">
+            <ul class="mp-list-title"></ul>
+            <table class="mp-list-table">
+                <thead>
+                <tr>
+                    <th>歌名</th>
+                    <th>歌手</th>
+                    <th>时长</th>
+                </tr>
+                </thead>
+                <tbody class="mp-list"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="${ctx}/music/js/jquery.min.js"></script>
+    <script src="${ctx}/music/js/mplayer.js"></script>
+    <script src="${ctx}/music/js/mplayer-list.js"></script>
+    <script src="${ctx}/music/js/mplayer-functions.js"></script>
+    <script src="${ctx}/music/js/jquery.nstSlider.min.js"></script>
+    <script src="${ctx}/music/js/mtjs.js"></script>
+
     <!--footer end-->
     <script type="text/javascript">jQuery(".lanmubox").slide({easing:"easeOutBounce",delayTime:400});</script>
     <script  type="text/javascript" src="${ctx}/js/nav.js"></script>

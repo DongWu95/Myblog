@@ -56,6 +56,11 @@ public class MyController {
 
 
 
+
+
+
+
+
     //评论的上传
     @RequestMapping(value = "/Myblog/Comment")
     public String comment(HttpServletRequest request,HttpSession session,@RequestParam(value = "message",defaultValue ="-010" ) String message,@RequestParam("articleid") Integer articleid){
