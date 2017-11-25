@@ -26,6 +26,8 @@
         <property name="user" value="root"></property>
         <property name="password" value="123456"></property>
         <property name="testConnectionOnCheckin" value="true"></property>
+        <property name=" testConnectionOnCheckout" value="true"></property>
+
 
     </bean>
 
@@ -68,6 +70,7 @@
                 <prop key="maxwait">10000</prop>
                 <prop key="maxidle">25</prop>
                 <prop key="minidle">5</prop>
+
 
             </props>
         </property>
