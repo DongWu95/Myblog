@@ -25,8 +25,8 @@
         <!-- 连接数据的用户名和密码 -->
         <property name="user" value="root"></property>
         <property name="password" value="123456"></property>
-        <property name="testConnectionOnCheckin" value="true"></property>
-        <property name=" testConnectionOnCheckout" value="true"></property>
+        <!--<property name="testConnectionOnCheckin" value="true"></property>-->
+        <!--<property name=" testConnectionOnCheckout" value="true"></property>-->
 
 
     </bean>
