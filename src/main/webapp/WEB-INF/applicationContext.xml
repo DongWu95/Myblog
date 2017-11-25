@@ -25,6 +25,7 @@
         <!-- 连接数据的用户名和密码 -->
         <property name="user" value="root"></property>
         <property name="password" value="123456"></property>
+        <property name="testConnectionOnCheckin" value="true"></property>
 
     </bean>
 
@@ -64,6 +65,9 @@
                 <prop key="hibernate.ejb.naming_strategy">org.hibernate.cfg.ImprovedNamingStrategy</prop>
 
                 <prop key="hibernate.generate_statistics">false</prop>
+                <prop key="maxwait">10000</prop>
+                <prop key="maxidle">25</prop>
+                <prop key="minidle">5</prop>
 
             </props>
         </property>
