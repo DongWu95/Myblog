@@ -57,6 +57,19 @@ public class MyController {
 
 
 
+    @RequestMapping(value = "/Video")
+    public String video(){
+
+
+        return "about";
+
+
+
+    }
+
+
+
+
 
 
 

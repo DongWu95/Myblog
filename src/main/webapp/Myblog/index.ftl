@@ -40,6 +40,7 @@
             <li><a href="${ctx}/Myblog/Shortwords">只言片语</a></li>
             <!--<li><a href="/View/riji.ftl">个人日记</a></li>-->
             <li><a href="${ctx}/View/xc.ftl">相册展示</a></li>
+            <li><a href="${ctx}/Video">每日一片</a></li>
          <div class="clear"></div>
         </ul>
       </div>

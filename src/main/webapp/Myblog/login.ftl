@@ -35,7 +35,7 @@
            <!--     <input type="password" name="password" class="password" placeholder="密码">  -->
 
                 <button type="submit">提交</button>
-                <div class="error"><span>+</span></div>
+                <div class="error"><span></span></div>
             </form>
             <div class="connect">
                

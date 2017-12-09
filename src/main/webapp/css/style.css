@@ -16,7 +16,7 @@ border-bottom:1px solid #ccc;}
 .weizi .wz_text a{color:#444;}
 .weizi .wz_text a:hover{text-decoration:underline;color:#f00;}
 /*about*/
-#content #about_me{width:730px;height:500px;background-color:#fff;}
+#content #about_me{width:730px;height:700px;background-color:#fff;}
 #about_me .about_content{width:710px;height:300px;margin-top:10px;padding:0 10px;}
 /*碎言碎语*/
 #say{width:950px;margin:5px auto;}
