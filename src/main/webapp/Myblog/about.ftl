@@ -46,7 +46,7 @@
            <div class="about_content">
 
                 <center>
-               <video src="http://185.38.13.130//mp43/223442.mp4?st=HwqXwDSxyQhqVgokk29U9w&e=1512866003" width="700" height="500" controls="controls">
+               <video src=${url} width="700" height="500" controls="controls">
 
                </video>
             </center>

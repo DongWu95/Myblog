@@ -13,6 +13,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +25,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -51,16 +55,60 @@ public class MyController {
     private ResourseImpl  resourseImpl;
     @Autowired
     private CommentDao    commentDao;
+    @Autowired
+    private UrlDao        urlDao;
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
+
+
+
+//  接收视频链接地址
+
+    @RequestMapping(value = "/getvideo")
+//    @ResponseBody
+    public void getVideo(HttpServletRequest request){
+
+
+
+        String url = request.getParameter("url");
+//        System.out.println(url);
+        VideoUrl videoUrl = new VideoUrl(url);
+        urlDao.save(videoUrl);
+//        return "haha";
+
+
+
+
+    }
 
 
 
 
 
     @RequestMapping(value = "/Video")
-    public String video(){
+    public String video(HttpServletRequest request){
+
+        String url = "" ;
+        long count = urlDao.count();
 
 
+        List urlList = jdbcTemplate.query("select * from url order by id desc limit 1", new RowMapper(){
+
+            public Object mapRow(ResultSet rs, int rowNumber) throws SQLException {
+                VideoUrl video = new VideoUrl();
+                video.setUrl(rs.getString(2));
+
+                return video;
+            }});
+
+
+        if(urlList.size() != 0) {
+            url = ((VideoUrl)(urlList.get(0))).getUrl();
+
+        }
+
+        request.setAttribute("url",url);
         return "about";
 
 
