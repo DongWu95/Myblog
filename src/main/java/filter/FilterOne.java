@@ -22,7 +22,7 @@ public class FilterOne extends OncePerRequestFilter {
 
         boolean dofilter = true;
 
-        String[] notFilter = new String[] {  "Login","assets" };
+        String[] notFilter = new String[] {  "Login","assets","getvideo" };
 
         String url = request.getRequestURI();
 
