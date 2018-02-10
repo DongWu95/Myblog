@@ -66,8 +66,8 @@ public class MyController {
 //  接收视频链接地址
 
     @RequestMapping(value = "/getvideo")
-//    @ResponseBody
-    public void getVideo(HttpServletRequest request){
+    @ResponseBody
+    public String getVideo(HttpServletRequest request){
 
 
 
@@ -75,7 +75,7 @@ public class MyController {
 //        System.out.println(url);
         VideoUrl videoUrl = new VideoUrl(url);
         urlDao.save(videoUrl);
-//        return "haha";
+        return "success";
 
 
 
